@@ -8,7 +8,7 @@ Summary:	Internationalization library for Perl
 Summary(pl):	Biblioteka umiêdzynaradawiaj±ca Perla
 Name:		perl-libintl
 Version:	1.11
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/G/GU/GUIDO/%{pnam}-%{version}.tar.gz
@@ -38,8 +38,8 @@ zaimplementowanym na przyk³ad w gettexcie GNU.
 	OPTIMIZE="%{rpmcflags}"
 %{__make}
 
-# LANG=... -- workaround for broken (?) gettext
-%{?with_tests:LANG=en_US %{__make} test}
+# LC_ALL= LANG=... -- workaround for broken (?) gettext
+%{?with_tests:LC_ALL= LANG=en_US %{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
