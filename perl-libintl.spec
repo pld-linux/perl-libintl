@@ -6,7 +6,7 @@
 %define		pnam	libintl-perl
 Summary:	Internationalization library for Perl
 Summary(pl):	Biblioteka umiêdzynaradawiaj±ca Perla
-Name:		perl-libnet
+Name:		perl-libintl
 Version:	1.11
 Release:	1
 License:	LGPL
