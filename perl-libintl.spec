@@ -8,11 +8,12 @@ Summary:	Internationalization library for Perl
 Summary(pl):	Biblioteka umiêdzynaradawiaj±ca Perla
 Name:		perl-libintl
 Version:	1.11
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/G/GU/GUIDO/%{pnam}-%{version}.tar.gz
 # Source0-md5:	091e05542e36f030c785f2919f05b73f
+Patch0:		%{name}-kill_libiconv.patch
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,6 +30,7 @@ zaimplementowanym na przyk³ad w gettexcie GNU.
 
 %prep
 %setup -q -n %{pnam}-%{version}
+%patch0 -p0
 
 %build
 %{__perl} Makefile.PL \
@@ -36,7 +38,8 @@ zaimplementowanym na przyk³ad w gettexcie GNU.
 	OPTIMIZE="%{rpmcflags}"
 %{__make}
 
-%{?with_tests:%{__make} test}
+# LANG=... -- workaround for broken (?) gettext
+%{?with_tests:LANG=en_US %{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
