@@ -1,0 +1,11 @@
+--- gettext_xs/Makefile.PL~	2004-01-12 14:04:01.000000000 +0100
++++ gettext_xs/Makefile.PL	2005-01-14 13:22:34.470335024 +0100
+@@ -38,7 +38,7 @@
+     ),
+     PREREQ_PM => { File::Spec => 0 },
+ 	PL_FILES        => {},
+-	LIBS => ['-lintl', '-liconv'],
++	LIBS => [],
+ );
+ 
+ __END__
