@@ -24,8 +24,8 @@ implemented for example in GNU gettext.
 
 %description -l pl
 Pakiet stanowi bibliotekê umiêdzynaradawiaj±c± Perla, która ma na celu
-zachowanie zgodno¶ci zw standardem Uniforum t³umaczenia komunikatów
-zaimplementowanym na przuk³ad w gettexcie GNU.
+zachowanie zgodno¶ci ze standardem Uniforum t³umaczenia komunikatów
+zaimplementowanym na przyk³ad w gettexcie GNU.
 
 %prep
 %setup -q -n %{pnam}-%{version}
