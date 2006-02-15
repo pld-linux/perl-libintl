@@ -7,13 +7,14 @@
 Summary:	Internationalization library for Perl
 Summary(pl):	Biblioteka umiêdzynaradawiaj±ca Perla
 Name:		perl-libintl
-Version:	1.11
-Release:	3
+Version:	1.16
+Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/G/GU/GUIDO/%{pnam}-%{version}.tar.gz
-# Source0-md5:	091e05542e36f030c785f2919f05b73f
+# Source0-md5:	7dfcd9ac3a4ff41038a2c67a733d42b9
 Patch0:		%{name}-kill_libiconv.patch
+%{?with_tests:BuildRequires:	glibc-localedb-all}
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,6 +48,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -f $RPM_BULD_ROOT%{perl_archlib}/perllocal.pod
+rm -f $RPM_BULD_ROOT%{perl_vendorarch}/auto/libintl-perl/.packlist
+rm -f $RPM_BULD_ROOT%{perl_vendorlib}/Locale/gettext_xs.pod
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -55,6 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README ChangeLog TODO
 %dir %{perl_vendorarch}/auto/Locale/gettext_xs
 %attr(755,root,root) %{perl_vendorarch}/auto/Locale/gettext_xs/*.so
+%{perl_vendorarch}/auto/Locale/gettext_xs/gettext_xs.bs
 %{perl_vendorlib}/Locale/*.pm
 %{perl_vendorlib}/Locale/Recode
 %{perl_vendorlib}/Locale/RecodeData
