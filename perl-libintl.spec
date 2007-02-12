@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pnam	libintl-perl
 Summary:	Internationalization library for Perl
-Summary(pl):	Biblioteka umiêdzynaradawiaj±ca Perla
+Summary(pl.UTF-8):   Biblioteka umiÄ™dzynaradawiajÄ…ca Perla
 Name:		perl-libintl
 Version:	1.16
 Release:	1
@@ -25,10 +25,10 @@ The package is an internationalization library for Perl that aims to
 be compatible with the Uniforum message translations system as
 implemented for example in GNU gettext.
 
-%description -l pl
-Pakiet stanowi bibliotekê umiêdzynaradawiaj±c± Perla, która ma na celu
-zachowanie zgodno¶ci ze standardem Uniforum t³umaczenia komunikatów
-zaimplementowanym na przyk³ad w gettexcie GNU.
+%description -l pl.UTF-8
+Pakiet stanowi bibliotekÄ™ umiÄ™dzynaradawiajÄ…cÄ… Perla, ktÃ³ra ma na celu
+zachowanie zgodnoÅ›ci ze standardem Uniforum tÅ‚umaczenia komunikatÃ³w
+zaimplementowanym na przykÅ‚ad w gettexcie GNU.
 
 %prep
 %setup -q -n %{pnam}-%{version}
