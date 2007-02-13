@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pnam	libintl-perl
 Summary:	Internationalization library for Perl
-Summary(pl.UTF-8):   Biblioteka umiędzynaradawiająca Perla
+Summary(pl.UTF-8):	Biblioteka umiędzynaradawiająca Perla
 Name:		perl-libintl
 Version:	1.16
 Release:	1
