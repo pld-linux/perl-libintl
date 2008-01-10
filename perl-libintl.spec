@@ -36,9 +36,10 @@ zaimplementowanym na przykład w gettexcie GNU.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor \
+	INSTALLDIRS=vendor
+%{__make} \
+	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}"
-%{__make}
 
 # LC_ALL= LANG=... -- workaround for broken (?) gettext
 %{?with_tests:LC_ALL= LANG=en_US %{__make} test}
