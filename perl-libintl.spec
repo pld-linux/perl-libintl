@@ -9,7 +9,7 @@ Summary(pl.UTF-8):	Biblioteka umiędzynaradawiająca Perla
 Name:		perl-libintl
 Version:	1.20
 Release:	2
-License:	LGPL
+License:	LGPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/G/GU/GUIDO/%{pnam}-%{version}.tar.gz
 # Source0-md5:	cb36f58a7d2e15974f25b35381548b1b
@@ -46,12 +46,11 @@ zaimplementowanym na przykład w gettexcie GNU.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BULD_ROOT%{perl_archlib}/perllocal.pod
-rm -f $RPM_BULD_ROOT%{perl_vendorarch}/auto/libintl-perl/.packlist
-rm -f $RPM_BULD_ROOT%{perl_vendorlib}/Locale/gettext_xs.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Locale/{gettext_xs,libintlFAQ}.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/libintl-perl/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,9 +59,21 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README ChangeLog TODO
 %dir %{perl_vendorarch}/auto/Locale/gettext_xs
-%attr(755,root,root) %{perl_vendorarch}/auto/Locale/gettext_xs/*.so
+%attr(755,root,root) %{perl_vendorarch}/auto/Locale/gettext_xs/gettext_xs.so
 %{perl_vendorarch}/auto/Locale/gettext_xs/gettext_xs.bs
-%{perl_vendorlib}/Locale/*.pm
+%{perl_vendorlib}/Locale/Messages.pm
+%{perl_vendorlib}/Locale/Recode.pm
+%{perl_vendorlib}/Locale/RecodeData.pm
+%{perl_vendorlib}/Locale/TextDomain.pm
+%{perl_vendorlib}/Locale/Util.pm
+%{perl_vendorlib}/Locale/gettext_pp.pm
+%{perl_vendorlib}/Locale/gettext_xs.pm
 %{perl_vendorlib}/Locale/Recode
 %{perl_vendorlib}/Locale/RecodeData
-%{_mandir}/man3/*
+%{_mandir}/man3/Locale::Messages.3pm*
+%{_mandir}/man3/Locale::Recode*.3pm*
+%{_mandir}/man3/Locale::TextDomain.3pm*
+%{_mandir}/man3/Locale::Util.3pm*
+%{_mandir}/man3/Locale::gettext_pp.3pm*
+%{_mandir}/man3/Locale::gettext_xs.3pm*
+%{_mandir}/man3/Locale::libintlFAQ.3pm*
