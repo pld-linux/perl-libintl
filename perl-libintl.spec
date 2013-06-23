@@ -7,12 +7,12 @@
 Summary:	Internationalization library for Perl
 Summary(pl.UTF-8):	Biblioteka umiędzynaradawiająca Perla
 Name:		perl-libintl
-Version:	1.20
-Release:	3
+Version:	1.23
+Release:	1
 License:	LGPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/G/GU/GUIDO/%{pnam}-%{version}.tar.gz
-# Source0-md5:	cb36f58a7d2e15974f25b35381548b1b
+# Source0-md5:	2e79dc842af1c9efc14fbe6664dc89bf
 URL:		http://search.cpan.org/dist/libintl-perl/
 BuildRequires:	gdbm-devel
 %{?with_tests:BuildRequires:	glibc-localedb-all}
@@ -66,6 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Locale/RecodeData.pm
 %{perl_vendorlib}/Locale/TextDomain.pm
 %{perl_vendorlib}/Locale/Util.pm
+%{perl_vendorlib}/Locale/gettext_dumb.pm
 %{perl_vendorlib}/Locale/gettext_pp.pm
 %{perl_vendorlib}/Locale/gettext_xs.pm
 %{perl_vendorlib}/Locale/Recode
@@ -74,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Locale::Recode*.3pm*
 %{_mandir}/man3/Locale::TextDomain.3pm*
 %{_mandir}/man3/Locale::Util.3pm*
+%{_mandir}/man3/Locale::gettext_dumb.3pm*
 %{_mandir}/man3/Locale::gettext_pp.3pm*
 %{_mandir}/man3/Locale::gettext_xs.3pm*
 %{_mandir}/man3/Locale::libintlFAQ.3pm*
