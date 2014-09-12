@@ -60,7 +60,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc README ChangeLog TODO
 %dir %{perl_vendorarch}/auto/Locale/gettext_xs
 %attr(755,root,root) %{perl_vendorarch}/auto/Locale/gettext_xs/gettext_xs.so
-%{perl_vendorarch}/auto/Locale/gettext_xs/gettext_xs.bs
 %{perl_vendorlib}/Locale/Messages.pm
 %{perl_vendorlib}/Locale/Recode.pm
 %{perl_vendorlib}/Locale/RecodeData.pm
