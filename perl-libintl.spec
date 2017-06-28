@@ -8,12 +8,13 @@ Summary:	Internationalization library for Perl
 Summary(pl.UTF-8):	Biblioteka umiędzynaradawiająca Perla
 Name:		perl-libintl
 Version:	1.26
-Release:	3
+Release:	4
 License:	LGPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/G/GU/GUIDO/%{pnam}-%{version}.tar.gz
 # Source0-md5:	d355998f5f33a6f4202cd7ded7bf052a
 URL:		http://search.cpan.org/dist/libintl-perl/
+Patch0:		libintl-perl-1.26-Fix-building-on-Perl-without-.-in-INC.patch
 BuildRequires:	gdbm-devel
 %{?with_tests:BuildRequires:	glibc-localedb-all}
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -32,6 +33,7 @@ zaimplementowanym na przykład w gettexcie GNU.
 
 %prep
 %setup -q -n %{pnam}-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
