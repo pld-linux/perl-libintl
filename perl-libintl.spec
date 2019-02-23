@@ -7,13 +7,13 @@
 Summary:	Internationalization library for Perl
 Summary(pl.UTF-8):	Biblioteka umiędzynaradawiająca Perla
 Name:		perl-libintl
-Version:	1.29
-Release:	2
+Version:	1.31
+Release:	1
 License:	LGPL v2+
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/G/GU/GUIDO/%{pnam}-%{version}.tar.gz
-# Source0-md5:	a64a7ba45e8618f147e0668efd457d64
-URL:		http://search.cpan.org/dist/libintl-perl/
+Source0:	https://cpan.metacpan.org/authors/id/G/GU/GUIDO/%{pnam}-%{version}.tar.gz
+# Source0-md5:	5caf681294d0fa5511292f85d48f37dd
+URL:		https://metacpan.org/release/libintl-perl
 BuildRequires:	gdbm-devel
 %{?with_tests:BuildRequires:	glibc-localedb-all}
 BuildRequires:	perl-devel >= 1:5.8.0
