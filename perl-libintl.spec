@@ -8,7 +8,7 @@ Summary:	Internationalization library for Perl
 Summary(pl.UTF-8):	Biblioteka umiędzynaradawiająca Perla
 Name:		perl-libintl
 Version:	1.31
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		Development/Languages/Perl
 Source0:	https://cpan.metacpan.org/authors/id/G/GU/GUIDO/%{pnam}-%{version}.tar.gz
